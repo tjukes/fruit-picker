@@ -35,3 +35,4 @@ Features:
   - pickup day
   - pickup day, include your total owing
   - last-minute updates (eg, different kind of peppers coming, extra peaches, etc)
+- use api (eg instagram) to suggest images for each fruit listing; allow admin to flip through images until an appropriate one comes up
