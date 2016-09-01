@@ -39,7 +39,7 @@ because I don't want duplicate orders or multiple totals
 
 Given that I've made an order
 When I make a new order with the same phone number
-Then add the new items to my existing order
+Then alter my existing order
 
 
 #### Admin functionality
