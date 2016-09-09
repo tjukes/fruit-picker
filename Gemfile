@@ -16,10 +16,12 @@ group :development, :test do
   gem 'pry'
   gem 'shotgun'
   gem 'sqlite3'
+  gem 'rspec'
+  gem 'rack-test'
 end
 
 # bundle install --without test --without development
 group :production do
-  # use postgres in production, or move outside a group if your app uses postgres for development and production 
+  # use postgres in production, or move outside a group if your app uses postgres for development and production
   gem 'pg'
 end
