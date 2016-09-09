@@ -17,6 +17,7 @@ configure do
   set :server, :puma
 
   enable :sessions
+  #Change session secret and find out whether to commit it
   set :session_secret, ENV['SESSION_KEY'] || 'lighthouselabssecret'
 
   set :views, File.join(Sinatra::Application.root, "app", "views")
