@@ -19,7 +19,8 @@
 
 ENV['RACK_ENV'] = 'test'
 
-require "./config/environment"
+require "./config/environment.rb"
+require 'rack/test'
 
 RSpec.configure do |config|
    config.include Rack::Test::Methods

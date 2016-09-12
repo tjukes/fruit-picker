@@ -8,6 +8,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/contrib/all' # Requires cookies, among other things
 
+#TODO: Redundant as long as sinatra's :root is set in a file that's located in the same dir as the root, as in config.ru  
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
 
@@ -17,7 +18,7 @@ configure do
   set :server, :puma
 
   enable :sessions
-  #Change session secret and find out whether to commit it
+  #TODO: Change session secret and find out whether to commit it
   set :session_secret, ENV['SESSION_KEY'] || 'lighthouselabssecret'
 
   set :views, File.join(Sinatra::Application.root, "app", "views")
