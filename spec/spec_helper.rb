@@ -21,10 +21,14 @@ ENV['RACK_ENV'] = 'test'
 
 require "./config/environment.rb"
 require 'rack/test'
+require 'ActiveRecord'
 
 RSpec.configure do |config|
    config.include Rack::Test::Methods
 
+   config.after :all do
+     ActiveRecord::Base.subclasses.each(|x| {x.delete_all})
+   end
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
