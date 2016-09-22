@@ -1,4 +1,4 @@
-require 'spec_helper'
+require_relative 'spec_helper'
 
 RSpec.describe 'FruitList' do ||
   test_fruit = [Fruit.create({name: 'Apple', unit:'5LB', price: 5.23}),
