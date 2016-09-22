@@ -28,7 +28,7 @@ Features:
 - people see their order total
 - display count of orders made
 - public message board
-- save each "batch" or ordering round for history/reference and to allow carrying fruit forward instead of entering it as new stock each time (new db table required)
+- save each "batch" or ordering round for history/reference and to allow carrying fruit forward instead of entering it as new stock each time (new db table required) => this changes the erd, add rounds table and join table with fruit.
 - user accounts with more security, and order history
 - notifications: email / sms - eg, reminders for:
   - deadlines
