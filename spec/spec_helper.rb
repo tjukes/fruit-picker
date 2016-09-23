@@ -19,16 +19,26 @@
 
 ENV['RACK_ENV'] = 'test'
 
+require 'rspec'
 require "./config/environment.rb"
 require 'rack/test'
-require 'ActiveRecord'
+
+def safely_require(file)
+  require_relative file
+rescue LoadError
+  # ignore
+end
+
+# Do we need to safely require or even require these?
+safely_require '../app/models/fruit'
+safely_require '../app/models/round'
 
 RSpec.configure do |config|
    config.include Rack::Test::Methods
 
-   config.after :all do
-     ActiveRecord::Base.subclasses.each(|x| {x.delete_all})
-   end
+  #  config.after :all do
+  #    ActiveRecord::Base.subclasses.each(&:delete_all)
+  #  end
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
